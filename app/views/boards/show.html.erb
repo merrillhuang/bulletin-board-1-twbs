@@ -9,45 +9,15 @@
   </div>
 </div>
 
-<h2>Active posts</h2>
+<ul class="nav nav-tabs nav-fill">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active posts</a>
+  </li>
 
-<table border="1">
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Posted on</th>
-    <th>Expires on</th>
-  </tr>
-
-  <% @active_posts.each do |a_post| %>
-    <tr>
-      <td><%= a_post.title %></td>
-      <td><%= a_post.body %></td>
-      <td><%= a_post.created_at.strftime("%b %e, %Y") %></td>
-      <td><%= a_post.expires_on.strftime("%b %e, %Y") %></td>
-    </tr>
-  <% end %>
-</table>
-
-<h2>Expired posts</h2>
-
-<table border="1">
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Posted on</th>
-    <th>Expired on</th>
-  </tr>
-
-  <% @expired_posts.each do |a_post| %>
-    <tr>
-      <td><%= a_post.title %></td>
-      <td><%= a_post.body %></td>
-      <td><%= a_post.created_at.strftime("%b %e, %Y") %></td>
-      <td><%= a_post.expires_on.strftime("%b %e, %Y") %></td>
-    </tr>
-  <% end %>
-</table>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Expired posts</a>
+  </li>
+</ul>
 
 <div class="modal fade" id="add_post_form" tabindex="-1" aria-labelledby="add_post_modal_Label" aria-hidden="true">
   <div class="modal-dialog">
