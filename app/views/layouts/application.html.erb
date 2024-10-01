@@ -23,7 +23,7 @@
 
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
-      <div class="container-fluid">
+      <div class="container">
         <a class="navbar-brand" href="/">Bulletin Board</a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -35,19 +35,19 @@
         </div>
       </div>
     </nav>
+    <div class="container">
+      <% if notice.present? %>
+        <div class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
 
-    <% if notice.present? %>
-      <div style="color: green">
-        <%= notice %>
-      </div>
-    <% end %>
-
-    <% if alert.present? %>
-      <div style="color: red">
-        <%= alert %>
-      </div>
-    <% end %>
-
-    <%= yield %>
+      <% if alert.present? %>
+        <div class="alert alert-warning">
+          <%= alert %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
